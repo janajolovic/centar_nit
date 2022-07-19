@@ -3,19 +3,43 @@ import classes from "./Login.module.css";
 import { Link } from "react-router-dom";
 
 const Login = () => {
+  const [inputs, setInputs] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    setInputs({
+      ...inputs,
+      [e.target.id]: e.target.value,
+    });
+  };
+
   return (
     <div className={classes.login_container}>
       <div className={classes.login_form}>
         <div className={classes.login_left}>
           <h1>Log In</h1>
-          <form>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              setInputs({
+                email: "",
+                password: "",
+              });
+            }}
+          >
             <input
+              onChange={handleChange}
+              value={inputs.email}
               type="email"
               placeholder="Email"
               name="email"
               id="email"
             ></input>
             <input
+              onChange={handleChange}
+              value={inputs.password}
               type="password"
               placeholder="Password"
               name="password"
