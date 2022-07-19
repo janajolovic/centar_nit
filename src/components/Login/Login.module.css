@@ -1,0 +1,40 @@
+.login_container {
+    background-color: #0568c1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login_form {
+    width: 70%;
+    height: 60%;
+    background-color: white;
+    display: flex;
+}
+
+.login_left {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login_left form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login_right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+
+.login_right img {
+    width: 90%;
+}
