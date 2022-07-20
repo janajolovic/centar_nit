@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import classes from "./Login.module.css";
+import classes from "./Register.module.css";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Register = () => {
   const [inputs, setInputs] = useState({
     email: "",
+    username: "",
     password: "",
+    confirmPassword: "",
   });
 
   const handleChange = (e) => {
@@ -16,9 +18,8 @@ const Login = () => {
   };
 
   return (
-    <div className={classes.login_container}>
-      <div className={classes.login_form}>
-        <div className={classes.login_left}>
+    <div className={classes.register_container}>
+      <div className={classes.register_form}>
           <h1>Log In</h1>
           <form
             onSubmit={(e) => {
@@ -39,22 +40,34 @@ const Login = () => {
             ></input>
             <input
               onChange={handleChange}
+              value={inputs.username}
+              type="text"
+              placeholder="Username"
+              name="username"
+              id="username"
+            ></input>
+            <input
+              onChange={handleChange}
               value={inputs.password}
               type="password"
               placeholder="Password"
               name="password"
               id="password"
             ></input>
-            <button type="submit">Log In</button>
+            <input
+              onChange={handleChange}
+              value={inputs.confirmPassword}
+              type="password"
+              placeholder="Confirm password"
+              name="confirmPassword"
+              id="confirmPassword"
+            ></input>
+            <button type="submit">Sign Up</button>
           </form>
-          <p>Don't have an account? <Link style={{color: "#0568c1", textDecoration: 'none'}} to="/register">Register</Link></p>
+          <p>Already have an account? <Link style={{color: "#0568c1", textDecoration: 'none'}} to="/login">Login</Link></p>
         </div>
-        <div className={classes.login_right}>
-          <img src="https://ak15suthar.github.io/Portfolio/img/work.png"></img>
-        </div>
-      </div>
     </div>
   );
 };
 
-export default Login;
+export default Register;
