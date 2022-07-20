@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import classes from "./Login.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [inputs, setInputs] = useState({
@@ -8,7 +8,10 @@ const Login = () => {
     password: "",
   });
 
+  const navigate = useNavigate()
+
   const handleChange = (e) => {
+    e.preventDefault()
     setInputs({
       ...inputs,
       [e.target.id]: e.target.value,
@@ -27,6 +30,8 @@ const Login = () => {
                 email: "",
                 password: "",
               });
+              console.log(inputs)
+              navigate("/")
             }}
           >
             <input

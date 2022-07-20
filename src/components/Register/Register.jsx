@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import classes from "./Register.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [inputs, setInputs] = useState({
@@ -10,7 +10,10 @@ const Register = () => {
     confirmPassword: "",
   });
 
+  const navigate = useNavigate()
+
   const handleChange = (e) => {
+    e.preventDefault()
     setInputs({
       ...inputs,
       [e.target.id]: e.target.value,
@@ -26,8 +29,12 @@ const Register = () => {
               e.preventDefault();
               setInputs({
                 email: "",
+                username: "",
                 password: "",
+                confirmPassword: ""
               });
+              console.log(inputs)
+              navigate("/login")
             }}
           >
             <input
