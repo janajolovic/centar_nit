@@ -1,38 +1,15 @@
-.sidebar_container {
-    height: 100%;
-    width: 17%;
-}
-
-.sidebar_container_close {
-    height: 100%;
-    width: 30%;
-}
-
-.sidebar_container_close > div {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
 
 .sidebar {
     height: 100%;
     background-color: #0568c1;
     color: white;
-    padding: 20px;
-    font-size: 17px;
+    padding: 5px;
+    font-size: 16px;
     border-radius: 0px 10px 10px 0;
 }
 
 .icons {
     margin: 10px ;
-    padding: 15px;
-    transition: 0.3s all ease-in-out;
-    border-radius: 10px;
-}
-
-.icons_close {
-    width: 20px;
-    margin: 10px;
     padding: 15px;
     transition: 0.3s all ease-in-out;
     border-radius: 10px;
@@ -54,6 +31,8 @@
 }
 
 .sidebar h1 {
-    margin-left: 10px;
+    margin: 20px 20px;
+    color: white;
+    font-weight: 700;
 }
 

@@ -7,16 +7,18 @@ import {
   faUser,
   faHome,
   faCalendar,
-  faLaptopCode
+  faLaptopCode,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
-    faLaptopCode,
+  faLaptopCode,
   fas,
   faRightFromBracket,
   faHome,
   faBell,
   faAddressCard,
   faUser,
-  faCalendar
+  faCalendar,
+  faBars
 );
