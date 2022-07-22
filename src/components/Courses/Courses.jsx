@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Sidebar from "../Sidebar/Sidebar";
 import classes from "./Courses.module.css";
 
@@ -17,16 +18,26 @@ const Courses = () => {
         </p>
       </div>
       <div className={classes.new_courses}>
-        <div></div>
-        <div></div>
-      </div>
-      <div className={classes.new_courses}>
-        <div></div>
-        <div></div>
-      </div>
-      <div className={classes.new_courses}>
-        <div></div>
-        <div></div>
+        <div className={classes.course}>
+          <span>NEW</span>
+          <a
+            target="_blank"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdDsqd6aycthESNqo3ovcfwVKZcn84BM1_gItbzIDpnJItl-g/viewform"
+          >
+            Applications for IT Camp - Serbia 2022
+          </a>
+          <p>Applications are open until July 29th</p>
+        </div>
+        <div className={classes.course}>
+          <span>NEW</span>
+          <a
+            target="_blank"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSd8ud6wGFuzjIzfIKHuD8KUhvX8dm7aiCsVKHG7BE1eIcloAw/viewform"
+          >
+            Applications for Python Basics
+          </a>
+          <p>Applications are open until July 29th</p>
+        </div>
       </div>
       <h1>Courses</h1>
       <div>

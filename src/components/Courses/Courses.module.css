@@ -1,32 +1,74 @@
 .container {
-    min-height: 20vh;
-    width: 100%;
+  min-height: 20vh;
+  width: 100%;
 }
 
 .container .topic {
-   text-align: center;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
 }
 
 .container .topic p {
-    margin: 10px;
+  margin: 10px;
+}
+
+.topic h1 {
+    color: #3488d1;
 }
 
 .new_courses {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    background-color: aqua;
-    margin: 40px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  margin: 70px 0;
 }
 
-.new_courses div {
-    border: 2px solid black;
-    width: 30%;
-    height: 300px;
-    display: flex;
+.new_courses .course {
+  width: 40%;
+  height: 200px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #001a6c;
+  border-radius: 10px;
+  color: rgb(195, 194, 194);
+  font-size: 18px;
+  background-image: linear-gradient(to bottom , #3488d1, #09288d);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.466), 0 8px 8px rgba(0, 0, 0, 0.39);
+
+}
+
+.new_courses .course a {
+    color: white;
+    font-weight: 600;
+    margin: 8px 0;
+}
+
+.new_courses .course p {
+    font-size: 17px
+}
+
+.course span {
+    width: 60px;
+    font-size: 14px;
+    padding: 7px;
+    position: absolute;
+    left: -20px;
+    top: -15px;
+    text-align: center;
+    color: black;
+    border-radius: 25px;
+    -ms-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+    background-color: #f9ec8a;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 }
