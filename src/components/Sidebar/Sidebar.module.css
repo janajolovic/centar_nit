@@ -1,38 +1,36 @@
-
 .sidebar {
-    height: 100%;
-    background-color: #0568c1;
-    color: white;
-    padding: 5px;
-    font-size: 16px;
-    border-radius: 0px 10px 10px 0;
+  height: 100vh;
+  background-color: #0568c1;
+  color: white;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 0px 10px 10px 0;
 }
 
 .icons {
-    margin: 10px ;
-    padding: 15px;
-    transition: 0.3s all ease-in-out;
-    border-radius: 10px;
+  margin: 10px;
+  padding: 15px;
+  transition: 0.3s all ease-in-out;
+  border-radius: 10px;
 }
 
 .sidebar a {
-    color: white;
-    margin-left: 10px;
-    text-decoration: none;
+  color: white;
+  margin-left: 10px;
+  text-decoration: none;
 }
 
 .sidebar div:hover {
-    background-color: white;
-    color: #0568c1;
+  background-color: white;
+  color: #0568c1;
 }
 
 .sidebar div:hover a {
-    color: #0568c1;
+  color: #0568c1;
 }
 
 .sidebar h1 {
-    margin: 20px 20px;
-    color: white;
-    font-weight: 700;
+  margin: 20px 20px 30px 20px;
+  color: white;
+  font-weight: 700;
 }
-

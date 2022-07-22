@@ -1,0 +1,32 @@
+.container {
+    min-height: 20vh;
+    width: 100%;
+}
+
+.container .topic {
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+.container .topic p {
+    margin: 10px;
+}
+
+.new_courses {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: aqua;
+    margin: 40px 0;
+}
+
+.new_courses div {
+    border: 2px solid black;
+    width: 30%;
+    height: 300px;
+    display: flex;
+}
