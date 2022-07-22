@@ -13,7 +13,7 @@ const Sidebar = () => {
       </div>
       <div className={classes.icons}>
         <FontAwesomeIcon icon="fa-solid fa-laptop-code" />
-        <Link to="/">Courses</Link>
+        <Link to="/courses">Courses</Link>
       </div>
       <div className={classes.icons}>
         <FontAwesomeIcon icon="fa-solid fa-bell" />
