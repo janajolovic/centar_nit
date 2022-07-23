@@ -72,3 +72,75 @@
     font-weight: 700;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 }
+
+.all_courses {
+  background-color: #001a6c;
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.all_courses h1 {
+  margin-bottom: 20px;
+}
+
+.courses_cards {
+  margin: 40px 0 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.card {
+  width: 400px;
+  height: 450px;
+  border-radius: 10px;
+  background-color: #fff;
+  color: black;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px 10px 0px 0;
+}
+
+.card_text {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px ;
+  align-items: flex-start;
+}
+
+.card_text h3 {
+  margin: 10px 0;
+  color: #3488d1;
+}
+
+.card_text p {
+  margin: 10px 0;
+}
+
+.card_footer {
+  border-top: 4px solid #3488d1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 17px 0;
+}
+
+.card_footer button {
+  border-radius: 5px;
+  background-color: #3488d1;
+  color: white;
+  padding: 0px 10px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100px;
+  margin-right: 30px;
+  height: 30px;
+}
