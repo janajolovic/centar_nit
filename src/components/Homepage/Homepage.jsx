@@ -1,13 +1,18 @@
 import React from "react";
-import classes from "./Homepage.module.css"
-
+import Sidebar from "../Sidebar/Sidebar";
+import classes from "./Homepage.module.css";
 
 const Homepage = () => {
-    return (
-        <div className={classes.app}>
-            <h1>homepage</h1>
-        </div>
-    )
-}
+  return (
+    <div className={classes.app}>
+      <div className={classes.navbar}>
+        <Sidebar />
+      </div>
+      <div className={classes.main}>
+        <h1>homepage</h1>
+      </div>
+    </div>
+  );
+};
 
-export default Homepage
+export default Homepage;

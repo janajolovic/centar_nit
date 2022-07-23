@@ -23,7 +23,7 @@ const Register = () => {
   return (
     <div className={classes.register_container}>
       <div className={classes.register_form}>
-          <h1>Log In</h1>
+          <h1>Register</h1>
           <form
             onSubmit={(e) => {
               e.preventDefault();

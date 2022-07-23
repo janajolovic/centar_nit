@@ -8,18 +8,13 @@ import Sidebar from "./components/Sidebar/Sidebar";
 
 function App() {
   return (
-    <div className="app">
-      <div className="navbar">
-        <Sidebar />
-      </div>
-      <div className="main">
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/courses" element={<Courses />} />
-          </Routes>
-      </div>
+    <div >
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/" element={<Homepage />} />
+        <Route path="/courses" element={<Courses />} />
+      </Routes>
     </div>
   );
 }

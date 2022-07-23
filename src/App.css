@@ -8,20 +8,6 @@ body {
 .app {
   display: flex;
   width: 100%;
-  position: absolute;
-}
+} 
 
-.navbar {
-  width: 15%;
-  position: fixed;
-}
 
-.main {
-  width: 85%;
-  position: absolute;
-  right: 0;
-}
-
-.routes {
-  padding: 20px;
-}

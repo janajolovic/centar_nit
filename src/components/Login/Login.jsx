@@ -22,7 +22,7 @@ const Login = () => {
     <div className={classes.login_container}>
       <div className={classes.login_form}>
         <div className={classes.login_left}>
-          <h1>Log In</h1>
+          <h1>Login</h1>
           <form
             onSubmit={(e) => {
               e.preventDefault();
