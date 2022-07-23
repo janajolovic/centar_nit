@@ -1,9 +1,11 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Sidebar from "../Sidebar/Sidebar";
 import classes from "./Courses.module.css";
 
 const Courses = () => {
+  const navigate = useNavigate()
   return (
     <div className={classes.container}>
       <div className={classes.topic}>
@@ -39,10 +41,34 @@ const Courses = () => {
           <p>Applications are open until July 29th</p>
         </div>
       </div>
-      <h1>Courses</h1>
-      <div>
-        <div></div>
-        <div></div>
+      <div className={classes.all_courses}>
+        <h1>All Courses</h1>
+        <div className={classes.courses_cards}>
+          <div className={classes.card}>
+            <img style={{width: "90%", height: "180px", margin: "10px"}} src="https://developerpitstop.com/wp-content/uploads/2021/08/html-css-js.jpeg" />
+            <div className={classes.card_text}>
+              <h3>IT Camp</h3>
+              <p>Learn HTML, CSS, JavaScript and React JS</p>
+              <p><FontAwesomeIcon style={{marginRight: "5px"}} icon="fa-solid fa-clock" /> 6 months</p>
+              <p><FontAwesomeIcon style={{marginRight: "5px"}} icon="fa-solid fa-calendar" /> 3 times a week</p>
+            </div>
+            <div className={classes.card_footer}>
+              <button onClick={() => navigate("/")}>Start <FontAwesomeIcon style={{marginLeft: "5px"}} icon="fa-solid fa-arrow-right-long" /></button>
+            </div>
+          </div>
+          <div className={classes.card}>
+            <img src="https://tecswan.com/wp-content/uploads/2021/03/python-socket-programming.jpg" />
+            <div className={classes.card_text}>
+              <h3>Python</h3>
+              <p>Learn the basics of Python</p>
+              <p><FontAwesomeIcon style={{marginRight: "5px"}} icon="fa-solid fa-clock" /> 3 months</p>
+              <p><FontAwesomeIcon style={{marginRight: "5px"}} icon="fa-solid fa-calendar" /> 3 times a week</p>
+            </div>
+            <div className={classes.card_footer}>
+              <button onClick={() => navigate("/")}>Start <FontAwesomeIcon style={{marginLeft: "5px"}} icon="fa-solid fa-arrow-right-long" /></button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

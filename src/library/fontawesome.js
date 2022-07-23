@@ -9,6 +9,8 @@ import {
   faCalendar,
   faLaptopCode,
   faBars,
+  faArrowRightLong,
+  faClock,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -17,6 +19,8 @@ library.add(
   faRightFromBracket,
   faHome,
   faBell,
+  faArrowRightLong,
+  faClock,
   faAddressCard,
   faUser,
   faCalendar,
