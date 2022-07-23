@@ -1,4 +1,20 @@
 .app {
-    display: flex;
-    height: 100vh;
+  display: flex;
+  height: 100vh;
+}
+
+.navbar {
+  width: 15%;
+  position: fixed;
+}
+.app {
+  display: flex;
+  width: 100%;
+  position: absolute;
+}
+
+.main {
+  width: 85%;
+  position: absolute;
+  right: 0;
 }
