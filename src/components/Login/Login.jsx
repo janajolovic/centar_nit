@@ -3,19 +3,58 @@ import classes from "./Login.module.css";
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const API_KEY = process.env.REACT_APP_API_KEY;
+  const navigate = useNavigate();
+
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
   });
 
-  const navigate = useNavigate()
-
-  const handleChange = (e) => {
-    e.preventDefault()
+  const changeHandler = (event) => {
+    event.preventDefault();
     setInputs({
       ...inputs,
-      [e.target.id]: e.target.value,
+      [event.target.name]: event.target.value,
     });
+  };
+
+  const signInHandler = (event) => {
+    event.preventDefault();
+    setInputs({
+      email: "",
+      password: "",
+    });
+
+    fetch(
+      `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${API_KEY}`,
+      {
+        method: "POST",
+        body: JSON.stringify({
+          email: inputs.email,
+          password: inputs.password,
+          returnSecureToken: true,
+        }),
+        headers: {
+          "Content-Type": "aplication/json",
+        },
+      }
+    )
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          throw new Error("Invalid credentials");
+        }
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        alert(error);
+      });
+
+    navigate("/");
   };
 
   return (
@@ -23,19 +62,9 @@ const Login = () => {
       <div className={classes.login_form}>
         <div className={classes.login_left}>
           <h1>Login</h1>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              setInputs({
-                email: "",
-                password: "",
-              });
-              console.log(inputs)
-              navigate("/")
-            }}
-          >
+          <form onSubmit={signInHandler}>
             <input
-              onChange={handleChange}
+              onChange={changeHandler}
               value={inputs.email}
               type="email"
               placeholder="Email"
@@ -43,7 +72,7 @@ const Login = () => {
               id="email"
             ></input>
             <input
-              onChange={handleChange}
+              onChange={changeHandler}
               value={inputs.password}
               type="password"
               placeholder="Password"
@@ -52,7 +81,15 @@ const Login = () => {
             ></input>
             <button type="submit">Log In</button>
           </form>
-          <p>Don't have an account? <Link style={{color: "#0568c1", textDecoration: 'none'}} to="/register">Register</Link></p>
+          <p>
+            Don't have an account?{" "}
+            <Link
+              style={{ color: "#0568c1", textDecoration: "none" }}
+              to="/register"
+            >
+              Register
+            </Link>
+          </p>
         </div>
         <div className={classes.login_right}>
           <img src="https://ak15suthar.github.io/Portfolio/img/work.png"></img>

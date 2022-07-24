@@ -5,7 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const API_KEY = process.env.REACT_APP_API_KEY;
-  console.log(API_KEY);
   
   const navigate = useNavigate()
 
@@ -85,7 +84,7 @@ const Register = () => {
               name="confirmPassword"
               id="confirmPassword"
             ></input>
-            <button type="button">Sign Up</button>
+            <button type="type">Sign Up</button>
           </form>
           <p>Already have an account? <Link style={{color: "#0568c1", textDecoration: 'none'}} to="/login">Login</Link></p>
         </div>
