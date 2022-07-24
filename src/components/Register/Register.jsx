@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import classes from "./Register.module.css";
 import { Link, useNavigate } from "react-router-dom";
 
+
 const Register = () => {
+  const API_KEY = process.env.REACT_APP_API_KEY;
+  console.log(API_KEY);
+  
+  const navigate = useNavigate()
+
   const [inputs, setInputs] = useState({
     email: "",
     username: "",
@@ -10,43 +16,53 @@ const Register = () => {
     confirmPassword: "",
   });
 
-  const navigate = useNavigate()
 
-  const handleChange = (e) => {
-    e.preventDefault()
+  const changeHandler = (event) => {
+    event.preventDefault()
     setInputs({
       ...inputs,
-      [e.target.id]: e.target.value,
+      [event.target.name]: event.target.value,
     });
   };
+
+  const signupHandler = (event) => {
+      event.preventDefault();
+      setInputs({
+        email: "",
+        username: "",
+        password: "",
+        confirmPassword: ""
+      });
+      fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${API_KEY}`,
+    {
+      method: 'POST',
+      body: JSON.stringify({
+        email: inputs.email,
+        password: inputs.password,
+        returnSecureToken: true
+      }),
+      headers: {
+        'Content-Type': 'aplication/json'
+      },
+    })
+    navigate("/login")
+  }
 
   return (
     <div className={classes.register_container}>
       <div className={classes.register_form}>
           <h1>Register</h1>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              setInputs({
-                email: "",
-                username: "",
-                password: "",
-                confirmPassword: ""
-              });
-              console.log(inputs)
-              navigate("/login")
-            }}
-          >
+          <form onSubmit={signupHandler}>
             <input
-              onChange={handleChange}
+              onChange={changeHandler}
               value={inputs.email}
               type="email"
               placeholder="Email"
               name="email"
-              id="email"
-            ></input>
+              id="email">
+              </input>
             <input
-              onChange={handleChange}
+              onChange={changeHandler}
               value={inputs.username}
               type="text"
               placeholder="Username"
@@ -54,7 +70,7 @@ const Register = () => {
               id="username"
             ></input>
             <input
-              onChange={handleChange}
+              onChange={changeHandler}
               value={inputs.password}
               type="password"
               placeholder="Password"
@@ -62,14 +78,14 @@ const Register = () => {
               id="password"
             ></input>
             <input
-              onChange={handleChange}
+              onChange={changeHandler}
               value={inputs.confirmPassword}
               type="password"
               placeholder="Confirm password"
               name="confirmPassword"
               id="confirmPassword"
             ></input>
-            <button type="submit">Sign Up</button>
+            <button type="button">Sign Up</button>
           </form>
           <p>Already have an account? <Link style={{color: "#0568c1", textDecoration: 'none'}} to="/login">Login</Link></p>
         </div>
