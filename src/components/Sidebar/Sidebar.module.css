@@ -34,3 +34,7 @@
   color: white;
   font-weight: 700;
 }
+
+.sidebar span {
+  margin-left: 10px;
+}
